@@ -4,8 +4,9 @@
 [See Demo](https://github.com/benahmetcelik/laravel-route-lister)
 
 ### Installation ###
+Add composer.json file :
 ```php
- composer require benahmetcelik/laravel-route-lister
+   "benahmetcelik/laravel-route-lister": "dev-main",
 ```
 
 
@@ -13,7 +14,7 @@
 Only Install and usage :)
 
 ### Change Colors ###
-Config/route-lister.php 
+Config/route-lister.php
 
 ```php
   'theme'=>[

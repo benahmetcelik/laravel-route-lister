@@ -28,7 +28,7 @@ class RoutesServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'routes');
         $this->publishes([
             __DIR__ . '/../config/routes.php' => config_path('routes.php'),
-            __DIR__ . '/../resources/views' => resource_path('views/vendor/seo'),
+            __DIR__ . '/../resources/views' => resource_path('views/vendor/routes'),
         ]);
 
     }

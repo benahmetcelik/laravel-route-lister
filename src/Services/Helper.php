@@ -1,11 +1,6 @@
 <?php
-/**
- * User: Tuhin
- * Date: 2/17/2018
- * Time: 12:50 PM
- */
 
-namespace SEO\Services;
+namespace Routes\Services;
 
 
 class Helper
