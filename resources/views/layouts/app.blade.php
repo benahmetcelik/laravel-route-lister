@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{{config('app.name')}}</title>
@@ -11,68 +12,42 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
           type="text/css"/>
-    @yield('css')
-    <style>
-        body {
-            padding-top: 50px !important;
-            background-color: '{{$theme['back']}}';
-            color: '{{$theme['text']}}';
-        }
-    </style>
-    <!-- Custom styles for this template -->
+@yield('css')
+
+<!-- Custom styles for this template -->
     <link href="{{asset('css/dashboard.css')}}" type="text/css" rel="stylesheet">
+
 </head>
 <body>
-<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">{{config('app.name')}}</a>
-    <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
-    <ul class="navbar-nav px-3">
-        @if (auth()->check())
-            <li class="nav-item text-nowrap">
-                <a class="nav-link" href="{{ url('/logout') }}"
-                   onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">
-                    Logout
-                </a>
-                <form id="logout-form" action="{{ url('/logout') }}" method="POST"
-                      style="display: none;">
-                    {{ csrf_field() }}
-                </form>
-            </li>
-        @else
-            <li class="nav-item text-nowrap">
-                <a class="nav-link" href="{{route('login')}}"><i class="fa fa-sign-in"></i> Login</a>
-            </li>
-        @endif
-    </ul>
-</nav>
 
-<div class="container-fluid">
+<div class="container-fluid" style=" background-color: {{$theme['back']}};
+        color: {{$theme['text']}};">
+
     <div class="row">
 
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
 
-             <div class="col-md-12">
-                 <table style='width:100%'>
-                     <tr>
-                         <td width='10%'><h4>HTTP Method</h4></td>
-                         <td width='10%'><h4>Route</h4></td>
-                         <td width='10%'><h4>Name</h4></td>
-                         <td width='70%'><h4>Corresponding Action</h4></td>
-                     </tr>
-                     @foreach(Route::getRoutes() as $value)
-                         <tr>
-                             <td>{{ $value->methods()[0] }}</td>
-                             <td>{{ $value->uri() }}</td>
-                             <td>{{ $value->getName() }}</td>
-                             <td>{{ $value->getActionName() }}</td>
-                         </tr>
-                     @endforeach
+                <div class="col-md-12">
+                    <table style='width:100%'>
+                        <tr>
+                            <td width='10%'><h4>HTTP Method</h4></td>
+                            <td width='10%'><h4>Route</h4></td>
+                            <td width='10%'><h4>Name</h4></td>
+                            <td width='70%'><h4>Corresponding Action</h4></td>
+                        </tr>
+                        @foreach(Route::getRoutes() as $value)
+                            <tr>
+                                <td>{{ $value->methods()[0] }}</td>
+                                <td>{{ $value->uri() }}</td>
+                                <td>{{ $value->getName() }}</td>
+                                <td>{{ $value->getActionName() }}</td>
+                            </tr>
+                        @endforeach
 
-                </table>
-             </div>
+                    </table>
+                </div>
 
 
             </div>
