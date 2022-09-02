@@ -22,7 +22,7 @@ After press 0 and enter
 Only Install and usage :)
 
 ### Change Colors ###
-Config/route-lister.php
+Config/routes.php
 
 ```php
   'theme'=>[
