@@ -31,6 +31,7 @@ class RoutesServiceProvider extends ServiceProvider
             __DIR__ . '/../resources/views' => resource_path('views/vendor/routes'),
         ]);
 
+
     }
 
     /**
@@ -51,11 +52,7 @@ class RoutesServiceProvider extends ServiceProvider
         //
     }
 
-    /**
-     * To register seo as first level command. E.g. seo:model
-     *
-     * @return array
-     */
+
     public function provides()
     {
         //
