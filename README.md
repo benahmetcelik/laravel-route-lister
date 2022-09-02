@@ -8,7 +8,15 @@ Add composer.json file :
 ```php
    "benahmetcelik/laravel-route-lister": "dev-main",
 ```
+### Run Command On Your Terminal ###
 
+```php
+   php artisan vendor:publish 
+```
+After press 0 and enter
+  ```php
+   php artisan optimize
+```
 
 ### Easy to use ###
 Only Install and usage :)
